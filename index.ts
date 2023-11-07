@@ -50,7 +50,7 @@ const lambdaFunc = new aws.lambda.Function(
     imageUri: pulumi.interpolate`${repo.repositoryUrl}:latest`,
     role: lambdaRole.arn,
     timeout: 300,
-    memorySize: 512,
+    memorySize: 1024,
     environment: {
       variables: {
         REPLICATE_API_TOKEN: process.env.REPLICATE_API_TOKEN ?? '',
